@@ -1,6 +1,7 @@
 import { Box, Button, Divider, Flex, Heading, HStack, SimpleGrid, VStack } from "@chakra-ui/react";
 import { Input } from "../../components/Form/Input";
-import { Header } from "../../components/Header";
+import { Header } from "../../components/Header/index";
+import { HeadingForm } from "../../components/HeadingForm";
 import { Sidebar } from "../../components/Sidebar";
 
 export default function CreateUser() {
@@ -10,17 +11,17 @@ export default function CreateUser() {
                 <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
                     <Sidebar />
 
-                    <Box flex="1" borderRadius={8} bg="gray.800" p="8">
-                        <Heading size="lg" fontWeight="normal">Criar usuário</Heading>
+                    <Box flex="1" borderRadius={8} bg="gray.800" p={["6", "8"]}>
+                        <HeadingForm title="Criar usuário" />
 
                         <Divider my="6" borderColor="gray.700" />
 
                         <VStack spacing="8">
-                            <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
+                            <SimpleGrid minChildWidth="240px" spacing={["6", "8"]} w="100%">
                                 <Input name="name" label="Nome completo" />
                                 <Input name="email" label="Email" />
                             </SimpleGrid>
-                            <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
+                            <SimpleGrid minChildWidth="240px" spacing={["6", "8"]} w="100%">
                                 <Input name="password" label="Senha" />
                                 <Input name="password_confirmation" label="Confirmação de senha" />
                             </SimpleGrid>
